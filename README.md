@@ -1,7 +1,7 @@
 <h1>Nessus Vulnerability Management Lab</h1>
 
 <h2>Description</h2>
-I setup 
+I installed and configured Nessus Essentials to perform credentialed vulnerability scans against Windows 10 Hosts 
 <br />
 
 
