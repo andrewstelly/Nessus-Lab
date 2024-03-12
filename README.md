@@ -18,11 +18,11 @@ I setup
 <h2>Program walkthrough:</h2>
 
 <p align="center">
-Create a virtual machine through Microsoft Azure with an open firewall <br/>
-<img src="https://i.imgur.com/MLUCZP7.png" height="80%" width="80%" alt="SIEM Steps"/>
+Create a virtual machine through VMware Workstation. For network adapter, select bridged. If you are not on ethernet, remove any bridging settings with ethernet <br/>
+<img src="https://i.imgur.com/MLUCZP7.png" height="80%" width="80%" alt="Nessus Steps"/>
 <br />
 <br />
 After creating the virtual machine, turn off all firewall settings and ping the machine, ensuring that echo requests are allowed  <br/>
-<img src="https://i.imgur.com/5ZEd8wE.png" height="80%" width="80%" alt="SIEM Steps"/>
+<img src="https://i.imgur.com/5ZEd8wE.png" height="80%" width="80%" alt="Nessus Steps"/>
 <br />
 <br />
