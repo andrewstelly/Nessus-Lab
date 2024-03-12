@@ -1,14 +1,15 @@
 <h1>Nessus Vulnerability Management Lab</h1>
 
 <h2>Description</h2>
-I setup Azure Sentinel (SIEM) and connected it to a live virtual machine acting as a honey pot. I observed live attacks (RDP Brute Force) from all around the world. I used a custom PowerShell script to look up the attackers Geolocation information and plot it on the Azure Sentinel Map!
+I setup 
 <br />
 
 
 <h2>Languages and Utilities Used</h2>
 
-- <b>PowerShell</b> 
-- <b>Azure</b>
+- <b>Nessus</b>
+- <b>VMware Workstation</b> 
+
 
 <h2>Environments Used </h2>
 
