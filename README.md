@@ -1,118 +1,102 @@
-<h1>Nessus Vulnerability Management Lab</h1>
+# Nessus Vulnerability Management Lab
 
-<h2>Description</h2>
-I installed and configured Nessus Essentials to perform credentialed vulnerability scans against Windows 10 Hosts 
-<br />
+## Description  
+Installed and configured **Nessus Essentials** to perform credentialed vulnerability scans against Windows 10 hosts.
 
+---
 
-<h2>Languages and Utilities Used</h2>
+## Languages and Utilities Used  
+- **Nessus**  
+- **VMware Workstation**
 
-- <b>Nessus</b>
-- <b>VMware Workstation</b> 
+## Environments Used  
+- **Windows 10**
 
+---
 
-<h2>Environments Used </h2>
+## Program Walkthrough
 
-- <b>Windows 10</b>
+### Create VM and Configure Network
+Create a VM in VMware Workstation. Select bridged network adapter. If you're on Wi-Fi, remove any Ethernet bridging.
+![Part 1](./images/Part1.png)
 
-<h2>Program walkthrough:</h2>
+### Verify Connectivity
+Shut off the VM firewall and ping it from your host to confirm network connectivity.
+![Part 2](./images/Part2.png)
 
-<p align="center">
-Create a virtual machine through VMware Workstation. For network adapter, select bridged. If you are not on ethernet, remove any bridging settings with ethernet <br/>
-<img src="https://i.imgur.com/IJk5pPM.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-Once running, shut off the firewall and ping it with your machine to ensure connectivity  <br/>
-<img src="https://i.imgur.com/1BDJBpd.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
+### Start Nessus Scan Setup
+Create a new scan in Nessus. Set the target to the VM's IP address.
+![Part 3](./images/Part3.png)
 
-<br />
-<p align="center">
-Ceate a new scan with Nessus and for the target, input the VM ip address <br/>
-<img src="https://i.imgur.com/MByZQr6.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-The scan can be configured to your needs. I will be running a common port scan <br/>
-<img src="https://i.imgur.com/pZUl0AA.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-Save and run the scan. <br/>
-<img src="https://i.imgur.com/0yDk97j.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-Once complete, you can review the vulnerabilties tab <br/>
-<img src="https://i.imgur.com/Dam1PrW.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-When clicking on a vulnerability, you will see more details about it and what you can do to remediate it<br/>
-<img src="https://i.imgur.com/f2ucCJj.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-We will now do a credential can. Go to services.msc and enable remote registry <br/>
-<img src="https://i.imgur.com/z2lshT2.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-Make sure that file and printer sharing is on in Advanced sharing settings <br/>
-<img src="https://i.imgur.com/GdeqTON.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-Disable User Account Control (This is not usually recommended, but we are not on the domain, so we have to disable it to complete the scan) <br/>
-<img src="https://i.imgur.com/IUrpb1z.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-Go to registry editor, browse to Local Machine → Software → Microsoft → Windows → Current Version → Policies → System. Create a dword value named LocalAccountTokenFilterPolicy. Set the value to 1, then restart the VM <br/>
-<img src="https://i.imgur.com/LFzR2cH.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-Go back to Nessus. Configure your Windows 10 Host, go to credentials. Add the username and password for the VM. Restart the scan <br/>
-<img src="https://i.imgur.com/l5fGc5b.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-When the scan is complete, we can see the list of vulnerabilities and their severity level <br/>
-<img src="https://i.imgur.com/eSxTRL9.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-There is also a tab for remediations (Automated Patching can solve most of the errors)  <br/>
-<img src="https://i.imgur.com/OVX3IpO.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-To further test the capabilities of Nessus, we will install an old version of firefox and run a new scan <br/>
-<img src="https://i.imgur.com/PX6XnRN.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-We can see that Mozilla Firefox has many critical issues (177 vulnerabilities) <br/>
-<img src="https://i.imgur.com/k7QAwgt.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
-  
-<br />
-<p align="center">
-To remediate some of our vulnerabilities, we can uninstall firefox and update windows. After running another scan, we can see that there are less vulnerabilities <br/>
-<img src="https://i.imgur.com/LGcKTW4.png" height="80%" width="80%" alt="Nessus Steps"/>
-<br />
+### Configure Scan
+Set scan type (e.g., common ports).
+![Part 4](./images/Part4.png)
+
+### Run the Scan
+Save and run the scan.
+![Part 5](./images/Part5.png)
+
+### Review Vulnerability Tab
+After the scan completes, review the **Vulnerabilities** tab.
+![Part 6](./images/Part6.png)
+
+### Investigate Vulnerabilities
+Click a vulnerability to view details and remediation steps.
+![Part 7](./images/Part7.png)
+
+---
+
+## Credentialed Scan Setup
+
+### Enable Remote Registry
+Open `services.msc` on the VM and enable **Remote Registry**.
+![Part 8](./images/Part8.png)
+
+### Enable File and Printer Sharing
+Ensure it's turned on in Advanced Sharing Settings.
+![Part 9](./images/Part9.png)
+
+### Disable User Account Control (UAC)
+Temporarily disable UAC for proper scanning (not ideal for domain machines).
+![Part 10](./images/Part10.png)
+
+### Registry Tweak for Credentialed Scan
+In `regedit`:  
+Navigate to:  
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`  
+Add `LocalAccountTokenFilterPolicy` as a `DWORD (32-bit)` value, set to `1`, then restart the VM.
+![Part 11](./images/Part11.png)
+
+### Add Credentials in Nessus
+Go to the Credentials tab in the scan configuration, and enter the VM’s username/password.
+![Part 12](./images/Part12.png)
+
+### Run Credentialed Scan
+Start the scan again.
+![Part 13](./images/Part13.png)
+
+### Vulnerability Results with Severity
+Review vulnerabilities categorized by severity.
+![Part 14](./images/Part14.png)
+
+### Review Remediation Suggestions
+Check the **Remediations** tab — many issues can be resolved with patching.
+![Part 15](./images/Part15.png)
+
+---
+
+## Additional Testing
+
+### Install Old Firefox
+Install an outdated version of Firefox to test Nessus detection capability.
+![Part 16](./images/Part16.png)
+
+### Observe Vulnerability Spike
+See 177 vulnerabilities reported for old Firefox version.
+![Part 17](./images/Part17.png)
+
+---
+
+## Final Notes  
+After uninstalling Firefox and updating Windows, a re-scan shows significantly fewer vulnerabilities, confirming successful remediation.
+
