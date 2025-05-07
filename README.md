@@ -90,8 +90,9 @@ Disable User Account Control (This is not usually recommended, but we are not on
 
 <br/><br/>
 
-Go to registry editor, browse to Local Machine → Software → Microsoft → Windows → Current Version → Policies → System.  
-Create a DWORD value named LocalAccountTokenFilterPolicy. Set the value to 1, then restart the VM  
+Navigate to:  
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`  
+Add `LocalAccountTokenFilterPolicy` as a `DWORD (32-bit)` value, set to `1`, then restart the VM.  
 <br/>
 <img src="./images/Part11.png" width="80%" alt="Part 11"/>
 
