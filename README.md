@@ -1,5 +1,3 @@
-<div align="center">
-
 # Nessus Vulnerability Management Lab
 
 ## Description  
@@ -15,6 +13,7 @@ Installed and configured **Nessus Essentials** to perform credentialed vulnerabi
 - **Windows 10**
 
 ---
+<div align="center">
 
 ## Program Walkthrough
 
