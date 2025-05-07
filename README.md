@@ -17,86 +17,96 @@ Installed and configured **Nessus Essentials** to perform credentialed vulnerabi
 ## Program Walkthrough
 
 ### Create VM and Configure Network
-Create a VM in VMware Workstation. Select bridged network adapter. If you're on Wi-Fi, remove any Ethernet bridging.
-![Part 1](./images/Part1.png)
+<p align="center">
+  <img src="./images/Part1.png" width="80%" alt="Part 1"/>
+</p>
 
 ### Verify Connectivity
-Shut off the VM firewall and ping it from your host to confirm network connectivity.
-![Part 2](./images/Part2.png)
+<p align="center">
+  <img src="./images/Part2.png" width="80%" alt="Part 2"/>
+</p>
 
 ### Start Nessus Scan Setup
-Create a new scan in Nessus. Set the target to the VM's IP address.
-![Part 3](./images/Part3.png)
+<p align="center">
+  <img src="./images/Part3.png" width="80%" alt="Part 3"/>
+</p>
 
 ### Configure Scan
-Set scan type (e.g., common ports).
-![Part 4](./images/Part4.png)
+<p align="center">
+  <img src="./images/Part4.png" width="80%" alt="Part 4"/>
+</p>
 
 ### Run the Scan
-Save and run the scan.
-![Part 5](./images/Part5.png)
+<p align="center">
+  <img src="./images/Part5.png" width="80%" alt="Part 5"/>
+</p>
 
 ### Review Vulnerability Tab
-After the scan completes, review the **Vulnerabilities** tab.
-![Part 6](./images/Part6.png)
+<p align="center">
+  <img src="./images/Part6.png" width="80%" alt="Part 6"/>
+</p>
 
 ### Investigate Vulnerabilities
-Click a vulnerability to view details and remediation steps.
-![Part 7](./images/Part7.png)
-
----
+<p align="center">
+  <img src="./images/Part7.png" width="80%" alt="Part 7"/>
+</p>
 
 ## Credentialed Scan Setup
 
 ### Enable Remote Registry
-Open `services.msc` on the VM and enable **Remote Registry**.
-![Part 8](./images/Part8.png)
+<p align="center">
+  <img src="./images/Part8.png" width="80%" alt="Part 8"/>
+</p>
 
 ### Enable File and Printer Sharing
-Ensure it's turned on in Advanced Sharing Settings.
-![Part 9](./images/Part9.png)
+<p align="center">
+  <img src="./images/Part9.png" width="80%" alt="Part 9"/>
+</p>
 
 ### Disable User Account Control (UAC)
-Temporarily disable UAC for proper scanning (not ideal for domain machines).
-![Part 10](./images/Part10.png)
+<p align="center">
+  <img src="./images/Part10.png" width="80%" alt="Part 10"/>
+</p>
 
-### Registry Tweak for Credentialed Scan
-In `regedit`:  
+### Registry Tweak for Credentialed Scan  
 Navigate to:  
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`  
-Add `LocalAccountTokenFilterPolicy` as a `DWORD (32-bit)` value, set to `1`, then restart the VM.
-![Part 11](./images/Part11.png)
+Add `LocalAccountTokenFilterPolicy` as a `DWORD (32-bit)` value, set to `1`, then restart the VM.  
+<p align="center">
+  <img src="./images/Part11.png" width="80%" alt="Part 11"/>
+</p>
 
 ### Add Credentials in Nessus
-Go to the Credentials tab in the scan configuration, and enter the VM’s username/password.
-![Part 12](./images/Part12.png)
+<p align="center">
+  <img src="./images/Part12.png" width="80%" alt="Part 12"/>
+</p>
 
 ### Run Credentialed Scan
-Start the scan again.
-![Part 13](./images/Part13.png)
+<p align="center">
+  <img src="./images/Part13.png" width="80%" alt="Part 13"/>
+</p>
 
 ### Vulnerability Results with Severity
-Review vulnerabilities categorized by severity.
-![Part 14](./images/Part14.png)
+<p align="center">
+  <img src="./images/Part14.png" width="80%" alt="Part 14"/>
+</p>
 
 ### Review Remediation Suggestions
-Check the **Remediations** tab — many issues can be resolved with patching.
-![Part 15](./images/Part15.png)
-
----
+<p align="center">
+  <img src="./images/Part15.png" width="80%" alt="Part 15"/>
+</p>
 
 ## Additional Testing
 
 ### Install Old Firefox
-Install an outdated version of Firefox to test Nessus detection capability.
-![Part 16](./images/Part16.png)
+<p align="center">
+  <img src="./images/Part16.png" width="80%" alt="Part 16"/>
+</p>
 
 ### Observe Vulnerability Spike
-See 177 vulnerabilities reported for old Firefox version.
-![Part 17](./images/Part17.png)
-
----
+<p align="center">
+  <img src="./images/Part17.png" width="80%" alt="Part 17"/>
+</p>
 
 ## Final Notes  
 After uninstalling Firefox and updating Windows, a re-scan shows significantly fewer vulnerabilities, confirming successful remediation.
-
