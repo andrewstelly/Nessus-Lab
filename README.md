@@ -1,28 +1,28 @@
 <h1 align="center">Nessus Vulnerability Management Lab</h1>
 
-<h2 align="center">Description</h2>
-<div align="center">
+<h2>Description</h2>
+<div>
   I installed and configured Nessus Essentials to perform credentialed vulnerability scans against Windows 10 Hosts.
 </div>
 
 ---
 
-<h2 align="center">Languages and Utilities Used</h2>
+<h2>Languages and Utilities Used</h2>
 
-<div align="center">
+<div>
 <ul>
   <li><b>Nessus</b></li>
   <li><b>VMware Workstation</b></li>
 </ul>
 </div>
 
-<h2 align="center">Environments Used</h2>
+<h2>Environments Used</h2>
 
-<div align="center">
+
 <ul>
   <li><b>Windows 10</b></li>
 </ul>
-</div>
+
 
 ---
 
